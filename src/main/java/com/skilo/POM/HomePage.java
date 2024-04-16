@@ -9,11 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class HomePage {
+public class HomePage extends Iskilo {
     //1.Static vars
     public static final String HOME_PAGE_URL = "http://training.skillo-bg.com:4300/posts/all";
-    private WebDriver driver;
-    private WebDriverWait wait;
 
     //2.WebElements \\ UI Mappings
     @FindBy (id = "nav-link-login")
@@ -21,8 +19,7 @@ public class HomePage {
 
     //3.Constructor
     public HomePage (WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(this.driver, Duration.ofSeconds(7));
+        super(driver);
         // Please do not forget to init Page Factory elements
         PageFactory.initElements(driver,this);
     }

@@ -10,19 +10,32 @@ public class LoginTests extends TestBase {
 
     @Test
     public void verifyUserCanNavigateToLoginPageViaNavigationLoginButton() throws InterruptedException {
+        //const and vars that will be used in the test case
+        final String USERNAME = "testingDemos";
+        final String PASSWORD = "testing";
+
         HomePage homePage = new HomePage(super.driver);
 
-        System.out.println("STEP 1: The user has open the ISkilo HomePage.");
+        log.info("STEP 1: The user has open the ISkilo HomePage.");
         homePage.openHomePage();
         sleepy(WAIT);
 
-        System.out.println("STEP 2: The user has navigated to ISkilo LoginPage");
+        log.info("STEP 2: The user has navigated to ISkilo LoginPage");
         homePage.navigateToLoginPageViaClickOnNavigationLoginButton();
         sleepy(WAIT);
 
-        System.out.println("STEP 3: The user has verified that the LoginPage is open as per requirements ");
+        log.info("STEP 3: The user has verified that the LoginPage is open as per requirements ");
         LoginPage loginPage = new LoginPage(super.driver);
-        loginPage.typeText();
+
+        log.info("STEP 5: The user has provided a valid username");
+        loginPage.provideUserName(USERNAME);
+
+        log.info("STEP 6: The user has provided a valid password");
+        loginPage.providePassword(PASSWORD);
+
+        log.info("STEP 7: The user has clicked on login submit button");
+        loginPage.clickOnLoginSubmitButton();
+
         sleepy(WAIT);
 
     }
