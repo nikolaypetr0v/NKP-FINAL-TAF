@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,6 +50,7 @@ public class BrowserDriverFactory {
 
 	private ChromeOptions configChromeOptions() {
 		Map<String, Object> prefs = new HashMap<>();
+
 		prefs.put("download.default_directory", System.getProperty("user.dir").concat("\\").concat(DOWNLOAD_DIR));
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setExperimentalOption("prefs", prefs);
