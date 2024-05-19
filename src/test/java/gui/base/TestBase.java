@@ -56,10 +56,12 @@ public class TestBase {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult testResult) {
-        log.info("Close driver");
-        // Close browser
-        takeScreenshot(testResult);
-        driver.quit();
+        if(driver != null){
+            log.info("Close driver");
+            // Close browser
+            takeScreenshot(testResult);
+            driver.quit();
+        }
     }
 
     @AfterSuite
@@ -76,7 +78,6 @@ public class TestBase {
     }
 
     private void cleanDirectory(String directoryPath) throws IOException {
-
         File directory = new File(directoryPath);
 
         Assert.assertTrue(directory.isDirectory(), "Invalid directory!");
@@ -102,7 +103,5 @@ public class TestBase {
             }
         }
     }
-
-
 }
 

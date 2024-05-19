@@ -1,7 +1,6 @@
 package com.skilo.POM;
 
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,12 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends Iskilo{
-
     //const
     public static final String LOGIN_PAGE_URL = "http://training.skillo-bg.com:4300/users/login";
 
     //WebElements or other  UI Map
-    @FindBy (css = "p.h4")
+    @FindBy (css = "p.h4.mb-4")
     private WebElement loginPageHeaderTitle;
     @FindBy (id = "defaultLoginFormUsername")
     private WebElement usernameInputField;
@@ -37,7 +35,7 @@ public class LoginPage extends Iskilo{
     }
 
     //User Actions
-    public void  provideUserName(String userName) {
+    public void provideUsername(String userName) {
        waitAndTypeTextInField(usernameInputField,userName);
     }
 
@@ -45,33 +43,81 @@ public class LoginPage extends Iskilo{
         waitAndTypeTextInField(passwordInputField,userPassword);
     }
 
-    public void clickOnLoginSubmitButton(){
+    public void clickOnRememberMeCheckbox(){
+        waitAndClickOnWebElement(rememberMeCheckBox);
+    }
+
+    public void clickOnLoginSubmitBtn(){
         waitAndClickOnWebElement(loginFormSubmitButton);
     }
 
-    public void loginWithUSerAndPassword(String userName, String password) {
-        provideUserName(userName);
+    public void clickOnLoginRegisterLink(){
+        waitAndClickOnWebElement(loginFormRegistrationLink);
+    }
+
+    public void loginWithUserAndPassword(String username, String password) {
+        provideUsername(username);
         providePassword(password);
-        clickOnLoginSubmitButton();
+        clickOnRememberMeCheckbox();
+        clickOnLoginSubmitBtn();
     }
 
     //getters
-    public  String getUserNamePlaceHolder () {
+    public String getUsernamePlaceholder () {
         wait.until(ExpectedConditions.visibilityOf(usernameInputField));
-        return usernameInputField.getAttribute("value");
+        return usernameInputField.getAttribute("placeholder");
     }
 
-    public boolean isUserNamePlaceHolderCorrect(String expectedUserNamePlaceHolder) {
+    public String getPasswordPlaceholder () {
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        return passwordInputField.getAttribute("placeholder");
+    }
+
+    public String getLoginPageHeader () {
+        wait.until(ExpectedConditions.visibilityOf(loginPageHeaderTitle));
+        return loginPageHeaderTitle.getText();
+    }
+
+    public boolean isUsernamePlaceholderCorrect(String expectedUsernamePlaceholder) {
         boolean isPerRequirments = false;
         try {
-             String actualUserNamePlaceHolder = getUserNamePlaceHolder();
-             isPerRequirments = expectedUserNamePlaceHolder.equals(actualUserNamePlaceHolder);
-
-        }catch (NoSuchElementException e){
-            log.error("ERROR ! The username placeHolder is not correct");
-            isPerRequirments = false;
+             String actualUsernamePlaceholder = getUsernamePlaceholder();
+             isPerRequirments = expectedUsernamePlaceholder.equals(actualUsernamePlaceholder);
+             if(isPerRequirments){
+                 log.error("ERROR ! The username placeholder is correct");
+             }
+        } catch (NoSuchElementException e){
+            log.error("ERROR ! The username placeholder is not correct");
         }
         return isPerRequirments;
     }
 
+    public boolean isPasswordPlaceholderCorrect(String expectedPasswordPlaceholder) {
+        boolean isPerRequirments = false;
+        try {
+            String actualPasswordPlaceholder = getPasswordPlaceholder();
+            isPerRequirments = expectedPasswordPlaceholder.equals(actualPasswordPlaceholder);
+            if(isPerRequirments){
+                log.error("ERROR ! The password placeholder is correct");
+            }
+        } catch (NoSuchElementException e){
+            log.error("ERROR ! The password placeholder is not correct");
+        }
+        return isPerRequirments;
+    }
+
+    public boolean isLoginPageOpenedPerRequirements(String expectedLoginPageHeaderTxt){
+        boolean isLoginPagePerRequirements = false;
+        try{
+//            System.out.println("Verify login page header is per requirements.");
+//            WebElement loginPageHeader = driver.findElement(By.cssSelector("p.h4.mb-4"));
+            String actualLoginPageHeaderText = getLoginPageHeader();
+            isLoginPagePerRequirements = expectedLoginPageHeaderTxt.equals(actualLoginPageHeaderText);
+            System.out.println("There is a match! Actual login page header matches the criteria ");
+        }
+        catch (NoSuchElementException e){
+            log.error("ERROR ! The Login page is not opened per requirements.");
+        }
+        return isLoginPagePerRequirements;
+    }
 }

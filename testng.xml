@@ -3,29 +3,49 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/CODE/SKILLO/TAF">
         <classes>
-            <class name="gui.SelniumVanillaLoginTest">
+            <!--<class name="gui.SeleniumVanillaLoginTest">
                 <methods>
                     <include name="verifyBasicNavigationWorks"/>
                 </methods>
             </class>
-            <class name="gui.e2e.IskiloHappyFlowTest">
+            <class name="gui.e2e.DemonstrationTest">
                 <methods>
-                    <include name="VerifyUserCanRegisterLoginUpdateProfileAndCretePost"/>
+                    <include name="verifyUserCanRegisterLoginUpdateProfileAndCreatePost"/>
                 </methods>
             </class>
-            <class name="gui.regression.login.LoginTest">
+            <class name="gui.e2e.DemonstrationTest">
                 <methods>
-                    <include name="verifyUserCanNavigateToLoginPageViaNavigationLoginButton"/>
+                    <include name="verifyUserCanCreateNewPost"/>
+                </methods>
+            </class>-->
+            <class name="gui.regression.login.LoginHappyTest">
+                <methods>
+                    <include name="verifyUserCanLoginViaNavLoginBtn"/>
                 </methods>
             </class>
-            <class name="gui.regression.post.DemonstrationTest">
+            <class name="gui.regression.login.LoginNegativeTest">
+                <methods>
+                    <include name="verifyUserCannotLoginWithWrongUsername"/>
+                </methods>
+            </class>
+            <class name="gui.regression.post.PostHappyTest">
                 <methods>
                     <include name="verifyUserCanCreateNewPost"/>
                 </methods>
             </class>
-            <class name="gui.regression.profile.ProfileHappyPathTest">
+            <class name="gui.regression.profile.ProfileHappyTest">
                 <methods>
                     <include name="verifyUserCanUpdateProfilePicture"/>
+                </methods>
+            </class>
+            <class name="gui.regression.profile.ProfileModalHappyTest">
+                <methods>
+                    <include name="verifyProfileModalLayoutIsPerRequirements"/>
+                </methods>
+            </class>
+            <class name="gui.regression.registration.RegistrationPageHappyTest">
+                <methods>
+                    <include name="verifyRegistrationPageLayoutIsPerRequirements"/>
                 </methods>
             </class>
         </classes>

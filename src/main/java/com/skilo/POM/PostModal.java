@@ -10,20 +10,25 @@ import java.time.Duration;
 
 public class PostModal extends Iskilo{
     private final WebElement modalElement;
+
     public PostModal (WebDriver driver, Logger log) {
         super(driver,log);
         this.modalElement = driver.findElement(By.className("post-modal"));
     }
 
     public boolean isImageVisible() {
+        boolean isPostImgVisible = false;
 
         try {
             WebElement image = modalElement.findElement(By.cssSelector(".post-modal-img img"));
-            return wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
+            isPostImgVisible = wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
+            if(isPostImgVisible){
+                log.info("CONFIRMATION # The image in the post is visible.");
+            }
         } catch (NoSuchElementException e) {
             e.printStackTrace();
-            return false;
         }
+        return isPostImgVisible;
     }
     public String getPostUser() {
         WebElement postUser = modalElement.findElement(By.className("post-user"));

@@ -30,7 +30,6 @@ public class Iskilo {
         elm .click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("return document.readyState").equals("complete");
-
     }
 
     public void waitAndTypeTextInField(WebElement textField, String inputText){
@@ -41,20 +40,19 @@ public class Iskilo {
         js.executeScript("return document.readyState").equals("complete");
     }
 
-    public String requestedUrl(String pageSufix ) {
-        return BASE_URL+pageSufix;
+    public String requestedUrl(String pageSuffix ) {
+        return BASE_URL + pageSuffix;
     }
-    public void navigateTo(String pageURLsufix){
-        String currentURL = BASE_URL + pageURLsufix; //for better debug
 
+    public void navigateTo(String pageURLSuffix){
+        String currentURL = BASE_URL + pageURLSuffix; //for better debug
         driver.get(currentURL);
-        log.info("CONFIRM # The user has navigating to : " +currentURL);
-
+        log.info("CONFIRM # The user has navigated to : " + currentURL);
         waitPageTobeFullLoaded();
     }
 
-    public boolean isUrlLoaded(String pageURL) {
-        waitPageTobeFullLoaded();
+    public boolean isURLLoaded(String pageURL) {
+         waitPageTobeFullLoaded();
          return wait.until(ExpectedConditions.urlContains(pageURL));
     }
 

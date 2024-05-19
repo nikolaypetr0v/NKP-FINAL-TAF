@@ -19,7 +19,7 @@ public class PostPage extends Iskilo {
     @FindBy (name = "caption")
     private WebElement captionElement;
     @FindBy (id = "create-post")
-    private WebElement createP0ostButton;
+    private WebElement createPostButton;
 
     public PostPage (WebDriver driver, Logger log) {
         super(driver,log);
@@ -27,17 +27,18 @@ public class PostPage extends Iskilo {
     }
 
     public boolean isImageVisible() {
-        boolean isVisible = false;
+        boolean isImgVisible = false;
 
         try {
-            isVisible = wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
-            log.info("CONFIRMATION # The file is visible.");
+            isImgVisible = wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
+            if (isImgVisible) {
+                log.info("CONFIRMATION # The file is visible.");
+            }
         } catch (NoSuchElementException e) {
             e.printStackTrace();
             log.error("ERROR : The file is not visible");
-            isVisible = false;
         }
-        return isVisible;
+        return isImgVisible;
     }
 
     public String getImageName() {
@@ -58,9 +59,8 @@ public class PostPage extends Iskilo {
     }
 
     public void clickCreatePostButton() {
-      wait.until(ExpectedConditions.visibilityOf(createP0ostButton));
-      createP0ostButton.click();
-      log.info("CONFIRMATION # The user has clicked on create post button");
+        wait.until(ExpectedConditions.visibilityOf(createPostButton));
+        createPostButton.click();
+        log.info("CONFIRMATION # The user has clicked on create post button");
     }
-
 }

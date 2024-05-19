@@ -16,7 +16,6 @@
             <url>https://dl.bintray.com/cbeust/maven/</url>
         </repository>
     </repositories>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>14</java.version>
@@ -25,7 +24,6 @@
         <testng.version>7.7.0</testng.version>
         <selenium.version>4.17.0</selenium.version>
     </properties>
-
     <dependencies>
         <!--    UNIT TESTING FW-->
         <dependency>
@@ -39,15 +37,12 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.15.1</version>
         </dependency>
-
         <!--   Logging     -->
-
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
@@ -57,11 +52,8 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.11.1</version>
-
         </dependency>
-
     </dependencies>
-
     <build>
         <pluginManagement>
             <plugins>
@@ -86,6 +78,5 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
     </build>
 </project>
