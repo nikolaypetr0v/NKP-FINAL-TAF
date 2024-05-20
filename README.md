@@ -1,1 +1,1 @@
-This is Test Automation Framework created with Java, Selenium WebDriver, TestNG, Apache Maven. The test cases developed in this framework cover the web-based application [ISkillo](http://training.skillo-bg.com:4200/) delivered by Skillo IT Academy.
+This is Test Automation Framework created with Java, Selenium WebDriver, TestNG, Apache Maven, GIT. The test cases developed in this framework cover the web-based application [ISkillo](http://training.skillo-bg.com:4200/) delivered by Skillo IT Academy.
