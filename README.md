@@ -1,0 +1,1 @@
+This is Test Automatin Framework created with Java, Selenium WebDriver, TestNG, Apache Maven. The test cases in this framework cover the web-based application [Link text Here](http://training.skillo-bg.com:4200/) delivered by Skillo IT Academy.
