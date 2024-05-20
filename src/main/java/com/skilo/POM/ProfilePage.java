@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.File;
 import java.util.List;
 
-public class ProfilePage  extends Iskilo{
+public class ProfilePage  extends Iskilo {
     @FindBy(id = "upload-img")
     private WebElement uploadProfilePictureField;
     @FindBy (css = "img.profile-image-source")
@@ -45,7 +45,7 @@ public class ProfilePage  extends Iskilo{
         profileImage.click();
     }
 
-    public void clickOnProfileInfoEditBtn(){
+    public void clickOnProfileInfoEditBtn() {
         waitAndClickOnWebElement(profileInfoEditBtn);
     }
 

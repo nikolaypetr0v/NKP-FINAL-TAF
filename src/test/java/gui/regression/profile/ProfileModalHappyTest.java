@@ -29,7 +29,7 @@ public class ProfileModalHappyTest extends TestBase {
     }
 
     @Test(dataProvider = "ProfileModalTestDataProvider")
-    public void verifyProfileModalLayoutIsPerRequirements(String username, String password) {
+    public void verifyProfileModalLayoutIsPerRequirements(String username, String password) throws InterruptedException {
         HomePage homePage = new HomePage(super.driver, log);
 
         LoginPage loginPage = new LoginPage(super.driver, log);
@@ -72,10 +72,5 @@ public class ProfileModalHappyTest extends TestBase {
 
         log.info("The user has verified that the profile modal layout is per requirements. ");
         sleepy(WAIT);
-
-//        profilePage.modifyProfileUsername("GandalfTheWhite");
-//        sleepy(WAIT);
-//        profilePage.clickOnProfileModalSaveBtn();
-//        sleepy(WAIT);
     }
 }

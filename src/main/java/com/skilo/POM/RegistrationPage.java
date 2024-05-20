@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class RegistrationPage extends Iskilo{
-    public static final String REGISTRATION_PAGE_URL = "http://training.skillo-bg.com:4300/users/register";
+public class RegistrationPage extends Iskilo {
+    public static final String REGISTRATION_PAGE_URL = "http://training.skillo-bg.com:4200/users/register";
 
     @FindBy (css = "h4.text-center.mb-4")
     private WebElement registrationPageHeaderTitle;
@@ -21,11 +21,11 @@ public class RegistrationPage extends Iskilo{
     private WebElement birthDateInputField;
     @FindBy (id = "defaultRegisterFormPassword")
     private WebElement passwordTxtInputField;
-    @FindBy (id = "defaultRegisterPhonePassword") //странна стойност за id на "Confirm password" текстово поле
+    @FindBy (id = "defaultRegisterFormConfirmPassword") // Бъг - тук за id на "Confirm password" текстово поле би трябвало да е "defaultRegisterFormConfirmPassword" вместо сегашното "defaultRegisterPhonePassword"
     private WebElement confirmPasswordTxtInputField;
     @FindBy (xpath = "//textarea[contains(@formcontrolname,'publicInfo')]")
     private WebElement publicInfoTxtInputField;
-    @FindBy (id = "sign-in-button") //странна стойност за id на Registration page submit бутон
+    @FindBy (id = "sign-up-button") // Бъг - тук за id на Registration page submit бутон би трябвало да е "sign-up-button" вместо сегашното "sign-in-button"
     private WebElement registrationFormSubmitBtn;
 
     public RegistrationPage (WebDriver driver, Logger log) {
@@ -195,5 +195,25 @@ public class RegistrationPage extends Iskilo{
             isRegBtnCorrect = false;
         }
         return isRegBtnCorrect;
+    }
+
+    public void provideUsername(String username) {
+        waitAndTypeTextInField(usernameTxtInputField, username);
+    }
+
+    public void provideEmail(String email) {
+        waitAndTypeTextInField(emailTxtInputField, email);
+    }
+
+    public void providePassword(String userPassword) {
+        waitAndTypeTextInField(passwordTxtInputField, userPassword);
+    }
+
+    public void confirmPassword(String userConfirmPassword) {
+        waitAndTypeTextInField(confirmPasswordTxtInputField, userConfirmPassword);
+    }
+
+    public void clickOnRegisterSubmitBtn(){
+        waitAndClickOnWebElement(registrationFormSubmitBtn);
     }
 }

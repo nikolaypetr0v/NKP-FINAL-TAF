@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginPage extends Iskilo{
+public class LoginPage extends Iskilo {
     //const
-    public static final String LOGIN_PAGE_URL = "http://training.skillo-bg.com:4300/users/login";
+    public static final String LOGIN_PAGE_URL = "http://training.skillo-bg.com:4200/users/login";
 
     //WebElements or other  UI Map
     @FindBy (css = "p.h4.mb-4")
@@ -20,9 +20,9 @@ public class LoginPage extends Iskilo{
     @FindBy (id = "defaultLoginFormPassword")
     private WebElement passwordInputField;
     @FindBy (xpath = "//span[contains(text(),'Remember me')]")
-    private WebElement rememberMeLabelText;
+    private WebElement rememberMeLblTxt;
     @FindBy (xpath = "//input[contains(@formcontrolname,'rememberMe')]")
-    private WebElement rememberMeCheckBox;
+    private WebElement rememberMeCheckbox;
     @FindBy (css = "#sign-in-button")
     private WebElement loginFormSubmitButton;
     @FindBy (xpath = "//a[contains(.,'Register')]")
@@ -35,8 +35,8 @@ public class LoginPage extends Iskilo{
     }
 
     //User Actions
-    public void provideUsername(String userName) {
-       waitAndTypeTextInField(usernameInputField,userName);
+    public void provideUsername(String username) {
+       waitAndTypeTextInField(usernameInputField, username);
     }
 
     public void providePassword(String userPassword){
@@ -44,7 +44,7 @@ public class LoginPage extends Iskilo{
     }
 
     public void clickOnRememberMeCheckbox(){
-        waitAndClickOnWebElement(rememberMeCheckBox);
+        waitAndClickOnWebElement(rememberMeCheckbox);
     }
 
     public void clickOnLoginSubmitBtn(){
@@ -80,6 +80,7 @@ public class LoginPage extends Iskilo{
 
     public boolean isUsernamePlaceholderCorrect(String expectedUsernamePlaceholder) {
         boolean isPerRequirments = false;
+
         try {
              String actualUsernamePlaceholder = getUsernamePlaceholder();
              isPerRequirments = expectedUsernamePlaceholder.equals(actualUsernamePlaceholder);
@@ -94,6 +95,7 @@ public class LoginPage extends Iskilo{
 
     public boolean isPasswordPlaceholderCorrect(String expectedPasswordPlaceholder) {
         boolean isPerRequirments = false;
+
         try {
             String actualPasswordPlaceholder = getPasswordPlaceholder();
             isPerRequirments = expectedPasswordPlaceholder.equals(actualPasswordPlaceholder);
@@ -108,14 +110,14 @@ public class LoginPage extends Iskilo{
 
     public boolean isLoginPageOpenedPerRequirements(String expectedLoginPageHeaderTxt){
         boolean isLoginPagePerRequirements = false;
+
         try{
-//            System.out.println("Verify login page header is per requirements.");
-//            WebElement loginPageHeader = driver.findElement(By.cssSelector("p.h4.mb-4"));
             String actualLoginPageHeaderText = getLoginPageHeader();
             isLoginPagePerRequirements = expectedLoginPageHeaderTxt.equals(actualLoginPageHeaderText);
-            System.out.println("There is a match! Actual login page header matches the criteria ");
-        }
-        catch (NoSuchElementException e){
+            if (isLoginPagePerRequirements) {
+                System.out.println("There is a match! Actual login page header matches the criteria ");
+            }
+        } catch (NoSuchElementException e){
             log.error("ERROR ! The Login page is not opened per requirements.");
         }
         return isLoginPagePerRequirements;

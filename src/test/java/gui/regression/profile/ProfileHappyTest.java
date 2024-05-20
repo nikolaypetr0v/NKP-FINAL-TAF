@@ -44,5 +44,6 @@ public class ProfileHappyTest extends TestBase {
         sleepy(WAIT);
 
         Assert.assertTrue(profilePage.isProfilePictureVisible(), "The image is not visible!");
+        sleepy(WAIT);
     }
 }

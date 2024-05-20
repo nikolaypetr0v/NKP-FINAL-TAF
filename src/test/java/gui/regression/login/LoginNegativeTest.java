@@ -15,7 +15,7 @@ public class LoginNegativeTest extends TestBase {
     public static final String LOGIN_PAGE_PASSWORD_PLACEHOLDER_LOCATOR = "Password";
 
     @Test
-    public void verifyUserCannotLoginWithWrongUsername()  throws InterruptedException {
+    public void verifyUserCannotLoginWithWrongUsername() throws InterruptedException {
         HomePage homePage = new HomePage(super.driver, log);
         log.info("STEP 1: Not logged in user opens the ISkillo HomePage.");
         homePage.openHomePage();

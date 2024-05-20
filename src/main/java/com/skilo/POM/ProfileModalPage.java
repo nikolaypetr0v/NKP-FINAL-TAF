@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ProfileModalPage extends Iskilo{
+public class ProfileModalPage extends Iskilo {
     @FindBy (xpath = "//input[contains(@formcontrolname, 'username')]")
     private WebElement profileUsernameInputField;
     @FindBy (css = "button.btn.btn-primary")
@@ -33,42 +33,42 @@ public class ProfileModalPage extends Iskilo{
         PageFactory.initElements(driver,this);
     }
 
-    public String getProfileModalHeader(){
+    public String getProfileModalHeader() {
         wait.until(ExpectedConditions.visibilityOf(profileModalHeaderTitle));
         return profileModalHeaderTitle.getText();
     }
 
-    public String getProfileModalUsernameLbl(){
+    public String getProfileModalUsernameLbl() {
         wait.until(ExpectedConditions.visibilityOf(profileModalUsernameLbl));
         return profileModalUsernameLbl.getText();
     }
 
-    public String getProfileModalEmailLbl(){
+    public String getProfileModalEmailLbl() {
         wait.until(ExpectedConditions.visibilityOf(profileModalEmailLbl));
         return profileModalEmailLbl.getText();
     }
 
-    public String getProfileModalPasswordLbl(){
+    public String getProfileModalPasswordLbl() {
         wait.until(ExpectedConditions.visibilityOf(profileModalPasswordLbl));
         return profileModalPasswordLbl.getText();
     }
 
-    public String getProfileModalConfirmPasswordLbl(){
+    public String getProfileModalConfirmPasswordLbl() {
         wait.until(ExpectedConditions.visibilityOf(profileModalConfirmPasswordLbl));
         return profileModalConfirmPasswordLbl.getText();
     }
 
-    public String getProfileModalPublicInfoLbl(){
+    public String getProfileModalPublicInfoLbl() {
         wait.until(ExpectedConditions.visibilityOf(profileModalPublicInfoLbl));
         return profileModalPublicInfoLbl.getText();
     }
 
-    public String getProfileModalSaveBtnTxt(){
+    public String getProfileModalSaveBtnTxt() {
         wait.until(ExpectedConditions.visibilityOf(profileModalSaveBtnTxt));
         return profileModalSaveBtnTxt.getText();
     }
 
-    public boolean isProfileModalHeaderCorrect(String expectedProfileModalHeaderTxt){
+    public boolean isProfileModalHeaderCorrect(String expectedProfileModalHeaderTxt) {
         boolean isProfileModalHeaderValid = false;
 
         try{
@@ -84,7 +84,7 @@ public class ProfileModalPage extends Iskilo{
         return isProfileModalHeaderValid;
     }
 
-    public boolean isProfileModalUsernameLblCorrect(String expectedProfileModalUsernameLblTxt){
+    public boolean isProfileModalUsernameLblCorrect(String expectedProfileModalUsernameLblTxt) {
         boolean isProfileModalUsernameLblValid = false;
 
         try{
@@ -100,7 +100,7 @@ public class ProfileModalPage extends Iskilo{
         return isProfileModalUsernameLblValid;
     }
 
-    public boolean isProfileModalEmailLblCorrect(String expectedProfileModalEmailLblTxt){
+    public boolean isProfileModalEmailLblCorrect(String expectedProfileModalEmailLblTxt) {
         boolean isProfileModalEmailLblValid = false;
 
         try{
@@ -116,7 +116,7 @@ public class ProfileModalPage extends Iskilo{
         return isProfileModalEmailLblValid;
     }
 
-    public boolean isProfileModalPasswordLblCorrect(String expectedProfileModalPasswordLblTxt){
+    public boolean isProfileModalPasswordLblCorrect(String expectedProfileModalPasswordLblTxt) {
         boolean isProfileModalPasswordLblValid = false;
 
         try{
@@ -132,7 +132,7 @@ public class ProfileModalPage extends Iskilo{
         return isProfileModalPasswordLblValid;
     }
 
-    public boolean isProfileModalConfirmPasswordLblCorrect(String expectedProfileModalConfirmPasswordLblTxt){
+    public boolean isProfileModalConfirmPasswordLblCorrect(String expectedProfileModalConfirmPasswordLblTxt) {
         boolean isProfileModalConfirmPasswordLblValid = false;
 
         try{
@@ -148,7 +148,7 @@ public class ProfileModalPage extends Iskilo{
         return isProfileModalConfirmPasswordLblValid;
     }
 
-    public boolean isProfileModalPublicInfoLblCorrect(String expectedProfileModalPublicInfoLblTxt){
+    public boolean isProfileModalPublicInfoLblCorrect(String expectedProfileModalPublicInfoLblTxt) {
         boolean isProfileModalPublicInfoLblValid = false;
 
         try{
@@ -164,7 +164,7 @@ public class ProfileModalPage extends Iskilo{
         return isProfileModalPublicInfoLblValid;
     }
 
-    public boolean isProfileModalSaveBtnTxtCorrect(String expectedProfileModalSaveBtnTxt){
+    public boolean isProfileModalSaveBtnTxtCorrect(String expectedProfileModalSaveBtnTxt) {
         boolean isProfileModalSaveBtnTxtValid = false;
 
         try{
@@ -180,7 +180,7 @@ public class ProfileModalPage extends Iskilo{
         return isProfileModalSaveBtnTxtValid;
     }
 
-    public void clickOnProfileModalSaveBtn(){
+    public void clickOnProfileModalSaveBtn() {
         waitAndClickOnWebElement(profileModalSaveBtn);
     }
 

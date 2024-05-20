@@ -48,6 +48,11 @@
                     <include name="verifyRegistrationPageLayoutIsPerRequirements"/>
                 </methods>
             </class>
+            <class name="gui.regression.registration.UserRegistrationHappyTest">
+                <methods>
+                    <include name="verifyUserCanRegisterWithValidData"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

@@ -51,7 +51,7 @@ public class PostHappyTest extends TestBase {
         sleepy(WAIT);
 
         ProfilePage profilePage = new ProfilePage(super.driver, log);
-        Assert.assertEquals(profilePage.getPostCount(), 2, "The number of Posts is incorrect!");
+        Assert.assertEquals(profilePage.getPostCount(), 2, "The number of posts is incorrect!");
         profilePage.clickPost(1);
         sleepy(WAIT);
 

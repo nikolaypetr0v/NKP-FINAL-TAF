@@ -9,7 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.File;
 public class PostPage extends Iskilo {
-    final String POST_PAGE_URL = "http://training.skillo-bg.com:4300/posts/create";
+    final String POST_PAGE_URL = "http://training.skillo-bg.com:4200/posts/create";
+
     @FindBy (css = "img.image-preview")
     private WebElement image;
     @FindBy (css = "input.input-lg")

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PostModal extends Iskilo{
+public class PostModal extends Iskilo {
     private final WebElement modalElement;
 
     public PostModal (WebDriver driver, Logger log) {
@@ -30,6 +30,7 @@ public class PostModal extends Iskilo{
         }
         return isPostImgVisible;
     }
+
     public String getPostUser() {
         WebElement postUser = modalElement.findElement(By.className("post-user"));
         wait.until(ExpectedConditions.visibilityOf(postUser));
