@@ -9,7 +9,14 @@
 
     <name>TAF</name>
     <url>http://maven.apache.org</url>
-
+    <inceptionYear>2024</inceptionYear>
+    <developers>
+        <developer>
+            <id>NP</id>
+            <name>Nikolay Petrov</name>
+            <email>np@yahoo.com</email>
+        </developer>
+    </developers>
     <repositories>
         <repository>
             <id>jcenter</id>
@@ -48,11 +55,7 @@
             <artifactId>log4j-api</artifactId>
             <version>2.11.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.11.1</version>
-        </dependency>
+
     </dependencies>
     <build>
         <pluginManagement>
@@ -74,6 +77,7 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
+                        <reportsDirectory>${project.build.directory}/../src/main/resources/reports</reportsDirectory>
                     </configuration>
                 </plugin>
             </plugins>

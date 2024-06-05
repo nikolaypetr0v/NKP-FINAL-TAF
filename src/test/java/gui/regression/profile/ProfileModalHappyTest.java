@@ -13,7 +13,6 @@ import org.testng.asserts.SoftAssert;
 public class ProfileModalHappyTest extends TestBase {
     public static final String LOGIN_PAGE_URL = "users/login";
     public static final int WAIT = 2000;
-
     //Web elements locators
     public static final String PROFILE_MODAL_HEADER_TXT = "Modify Your Profile";
     public static final String PROFILE_MODAL_USERNAME_LBL_TXT = "Usermame";
