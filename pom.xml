@@ -9,7 +9,14 @@
 
     <name>TAF</name>
     <url>http://maven.apache.org</url>
-
+    <inceptionYear>2024</inceptionYear>
+    <developers>
+        <developer>
+            <id>NP</id>
+            <name>Nikolay Petrov</name>
+            <email>nikolai.k.petrov@abv.bg</email>
+        </developer>
+    </developers>
     <repositories>
         <repository>
             <id>jcenter</id>
@@ -74,6 +81,7 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
+                        <reportsDirectory>${project.build.directory}/../src/main/resources/reports</reportsDirectory>
                     </configuration>
                 </plugin>
             </plugins>

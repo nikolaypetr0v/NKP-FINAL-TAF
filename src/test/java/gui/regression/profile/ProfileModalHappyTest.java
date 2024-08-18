@@ -11,17 +11,16 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class ProfileModalHappyTest extends TestBase {
-    public static final String LOGIN_PAGE_URL = "users/login";
-    public static final int WAIT = 2000;
-
+    private static final String LOGIN_PAGE_URL = "users/login";
+    private static final int WAIT = 2000;
     //Web elements locators
-    public static final String PROFILE_MODAL_HEADER_TXT = "Modify Your Profile";
-    public static final String PROFILE_MODAL_USERNAME_LBL_TXT = "Usermame";
-    public static final String PROFILE_MODAL_EMAIL_LBL_TXT = "Email";
-    public static final String PROFILE_MODAL_PASSWORD_LBL_TXT = "Password";
-    public static final String PROFILE_MODAL_CONFIRM_PASSWORD_LBL_TXT = "Confirm password";
-    public static final String PROFILE_MODAL_PUBIC_INFO_LBL_TXT = "Public Info";
-    public static final String PROFILE_MODAL_SAVE_BTN_TXT = "Save";
+    private static final String PROFILE_MODAL_HEADER_TXT = "Modify Your Profile";
+    private static final String PROFILE_MODAL_USERNAME_LBL_TXT = "Usermame";
+    private static final String PROFILE_MODAL_EMAIL_LBL_TXT = "Email";
+    private static final String PROFILE_MODAL_PASSWORD_LBL_TXT = "Password";
+    private static final String PROFILE_MODAL_CONFIRM_PASSWORD_LBL_TXT = "Confirm password";
+    private static final String PROFILE_MODAL_PUBIC_INFO_LBL_TXT = "Public Info";
+    private static final String PROFILE_MODAL_SAVE_BTN_TXT = "Save";
 
     @DataProvider(name = "ProfileModalTestDataProvider")
     public Object[][] getUsers() {

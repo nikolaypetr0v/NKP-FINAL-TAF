@@ -8,18 +8,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RegistrationPageHappyTest extends TestBase {
-    public static final int WAIT = 2000;
-
+    private static final int WAIT = 2000;
     //Login page web element locator
-    public static final String LOGIN_PAGE_HEADER_TXT_LOCATOR = "Sign in";
-
+    private static final String LOGIN_PAGE_HEADER_TXT_LOCATOR = "Sign in";
     //Register page web elements locators
-    public static final String REG_PAGE_HEADER_TXT_LOCATOR = "Sign up";
-    public static final String REG_PAGE_USERNAME_PLACEHOLDER = "Username";
-    public static final String REG_PAGE_EMAIL_PLACEHOLDER = "email";
-    public static final String REG_PAGE_PASSWORD_PLACEHOLDER = "Password";
-    public static final String REG_PAGE_CONFIRM_PASSWORD_PLACEHOLDER = "Confirm Password";
-    public static final String REG_PAGE_SUBMIT_BTN_LBL_LOCATOR = "Sign up"; // Бъг - в Registration page името на submit бутона е зададено некоректно като "Sign in" вместо "Sign up"
+    private static final String REG_PAGE_HEADER_TXT_LOCATOR = "Sign up";
+    private static final String REG_PAGE_USERNAME_PLACEHOLDER = "Username";
+    private static final String REG_PAGE_EMAIL_PLACEHOLDER = "email";
+    private static final String REG_PAGE_PASSWORD_PLACEHOLDER = "Password";
+    private static final String REG_PAGE_CONFIRM_PASSWORD_PLACEHOLDER = "Confirm Password";
+    private static final String REG_PAGE_SUBMIT_BTN_LBL_LOCATOR = "Sign up"; // Бъг - в Registration page името на submit бутона е зададено некоректно като "Sign in" вместо "Sign up"
 
     @Test
     public void verifyRegistrationPageLayoutIsPerRequirements() throws InterruptedException {

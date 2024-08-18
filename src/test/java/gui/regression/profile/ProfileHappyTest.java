@@ -2,11 +2,8 @@ package gui.regression.profile;
 
 import com.skilo.POM.HomePage;
 import com.skilo.POM.LoginPage;
-import com.skilo.POM.PostPage;
 import com.skilo.POM.ProfilePage;
 import gui.base.TestBase;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -14,12 +11,12 @@ import org.testng.annotations.Test;
 import java.io.File;
 
 public class ProfileHappyTest extends TestBase {
-    public static final String LOGIN_PAGE_URL = "users/login";
-    public static final int WAIT = 2000;
+    private static final String LOGIN_PAGE_URL = "users/login";
+    private static final int WAIT = 2000;
 
     @DataProvider(name = "ProfileTestDataProvider")
     public Object[][] getUsers() {
-        File profilePicture = new File("src\\test\\resources\\upload\\gandalfTheGray.jpg");
+        File profilePicture = new File("src\\test\\resources\\upload\\testUserProfilePicture.jpg");
 
         return new Object[][]{{
                 "gandalf", "thegray", profilePicture},

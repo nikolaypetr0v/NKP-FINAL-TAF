@@ -7,12 +7,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginNegativeTest extends TestBase {
-    public static final int WAIT = 2000;
-    public static final String WRONG_USERNAME = "saruman";
-    public static final String PASSWORD = "thegray";
-    public static final String LOGIN_PAGE_HEADER_TXT_LOCATOR = "Sign in";
-    public static final String LOGIN_PAGE_USERNAME_PLACEHOLDER_LOCATOR = "Username or email";
-    public static final String LOGIN_PAGE_PASSWORD_PLACEHOLDER_LOCATOR = "Password";
+    private static final int WAIT = 2000;
+    private static final String WRONG_USERNAME = "saruman";
+    private static final String PASSWORD = "thegray";
+    private static final String LOGIN_PAGE_HEADER_TXT_LOCATOR = "Sign in";
+    private static final String LOGIN_PAGE_USERNAME_PLACEHOLDER_LOCATOR = "Username or email";
+    private static final String LOGIN_PAGE_PASSWORD_PLACEHOLDER_LOCATOR = "Password";
 
     @Test
     public void verifyUserCannotLoginWithWrongUsername() throws InterruptedException {
@@ -34,7 +34,7 @@ public class LoginNegativeTest extends TestBase {
         boolean isUsernamePlaceholderValid = loginPage.isUsernamePlaceholderCorrect(LOGIN_PAGE_USERNAME_PLACEHOLDER_LOCATOR);
         Assert.assertTrue(isUsernamePlaceholderValid);
         loginPage.provideUsername(WRONG_USERNAME);
-        log.info("STEP 4: The user has provided a valid username");
+        log.info("STEP 4: The user has provided a wrong username");
         sleepy(WAIT);
 
         boolean isPasswordPlaceholderValid = loginPage.isPasswordPlaceholderCorrect(LOGIN_PAGE_PASSWORD_PLACEHOLDER_LOCATOR);

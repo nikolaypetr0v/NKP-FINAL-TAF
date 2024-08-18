@@ -8,15 +8,15 @@ import org.testng.annotations.Test;
 
 public class LoginHappyTest extends TestBase {
     //const and vars that will be used in the test case
-    public static final int WAIT = 2000;
-    public static final String USERNAME = "gandalf";
-    public static final String PASSWORD = "thegray";
-    public static final String LOGIN_PAGE_HEADER_TXT_LOCATOR = "Sign in";
-    public static final String LOGIN_PAGE_USERNAME_PLACEHOLDER_LOCATOR = "Username or email";
-    public static final String LOGIN_PAGE_PASSWORD_PLACEHOLDER_LOCATOR = "Password";
+    private static final int WAIT = 2000;
+    private static final String USERNAME = "gandalf";
+    private static final String PASSWORD = "thegray";
+    private static final String LOGIN_PAGE_HEADER_TXT_LOCATOR = "Sign in";
+    private static final String LOGIN_PAGE_USERNAME_PLACEHOLDER_LOCATOR = "Username or email";
+    private static final String LOGIN_PAGE_PASSWORD_PLACEHOLDER_LOCATOR = "Password";
 
     @Test
-    public void verifyUserCanLoginViaNavLoginBtn() throws InterruptedException {
+    public void verifyUserCanLoginViaNavLoginBtn(){
         HomePage homePage = new HomePage(super.driver, log);
         log.info("STEP 1: Not logged in user opens the ISkillo HomePage.");
         homePage.openHomePage();

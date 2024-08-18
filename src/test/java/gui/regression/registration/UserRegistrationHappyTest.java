@@ -7,17 +7,20 @@ import gui.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static utils.ContentGeneration.*;
+
 public class UserRegistrationHappyTest extends TestBase {
-    public static final int WAIT = 2000;
-
+    private static final int WAIT = 2000;
     //Web elements locators
-    public static final String LOGIN_PAGE_HEADER_TXT_LOCATOR = "Sign in";
-    public static final String REG_PAGE_HEADER_TXT_LOCATOR = "Sign up";
-
+    private static final String LOGIN_PAGE_HEADER_TXT_LOCATOR = "Sign in";
+    private static final String REG_PAGE_HEADER_TXT_LOCATOR = "Sign up";
     //Valid user registration data
-    public static final String REG_USERNAME = "NikolayPetrov2";
-    public static final String REG_PASSWORD = "1234567";
-    public static final String REG_EMAIL = "nkp3@abv.bg";
+//    public static final String REG_USERNAME = "NikolayPetrov2";
+//    public static final String REG_PASSWORD = "1234567";
+//    public static final String REG_EMAIL = "nkp3@abv.bg";
+    private static final String REG_USERNAME = createUser();
+    private static final String REG_PASSWORD = createPassword();
+    private static final String REG_EMAIL = createEmail();
 
     @Test
     public void verifyUserCanRegisterWithValidData() throws InterruptedException {

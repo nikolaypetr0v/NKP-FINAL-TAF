@@ -5,12 +5,11 @@ import gui.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.File;
 
 public class PostHappyTest extends TestBase {
-    public static final int WAIT = 2000;
-    public static final String LOGIN_PAGE_URL = "users/login";
+    private static final int WAIT = 2000;
+    private static final String LOGIN_PAGE_URL = "users/login";
 
     @DataProvider(name = "PostTestDataProvider")
     public Object[][] getUsers() {
