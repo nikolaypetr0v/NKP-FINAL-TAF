@@ -17,7 +17,7 @@ public class RegistrationPageHappyTest extends TestBase {
     private static final String REG_PAGE_EMAIL_PLACEHOLDER = "email";
     private static final String REG_PAGE_PASSWORD_PLACEHOLDER = "Password";
     private static final String REG_PAGE_CONFIRM_PASSWORD_PLACEHOLDER = "Confirm Password";
-    private static final String REG_PAGE_SUBMIT_BTN_LBL_LOCATOR = "Sign in"; // Бъг - в Registration page името на submit бутона е зададено некоректно като "Sign in" вместо "Sign up"
+    private static final String REG_PAGE_SUBMIT_BTN_LBL_LOCATOR = "Sign up"; // Бъг - в Registration page името на submit бутона е зададено некоректно като "Sign in" вместо "Sign up"
 
     @Test
     public void verifyRegistrationPageLayoutIsPerRequirements() throws InterruptedException {

@@ -21,11 +21,11 @@ public class RegistrationPage extends Iskilo {
     private WebElement birthDateInputField;
     @FindBy (id = "defaultRegisterFormPassword")
     private WebElement passwordTxtInputField;
-    @FindBy (id = "defaultRegisterPhonePassword") // Бъг - тук за id на "Confirm password" текстово поле би трябвало да е "defaultRegisterFormConfirmPassword" вместо сегашното "defaultRegisterPhonePassword"
+    @FindBy (id = "defaultRegisterFormConfirmPassword") // Бъг - тук за id на "Confirm password" текстово поле би трябвало да е "defaultRegisterFormConfirmPassword" вместо сегашното "defaultRegisterPhonePassword"
     private WebElement confirmPasswordTxtInputField;
     @FindBy (xpath = "//textarea[contains(@formcontrolname,'publicInfo')]")
     private WebElement publicInfoTxtInputField;
-    @FindBy (id = "sign-in-button") // Бъг - тук за id на Registration page submit бутон би трябвало да е "sign-up-button" вместо сегашното "sign-in-button"
+    @FindBy (id = "sign-up-button") // Бъг - тук за id на Registration page submit бутон би трябвало да е "sign-up-button" вместо сегашното "sign-in-button"
     private WebElement registrationFormSubmitBtn;
 
     public RegistrationPage (WebDriver driver, Logger log) {
